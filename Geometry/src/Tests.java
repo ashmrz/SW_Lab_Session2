@@ -39,4 +39,21 @@ public class Tests {
         Rectangle rectangle1 = new Rectangle(5, 7);
         rectangle1.setWidth(-3);
     }
+
+    @Test
+    public void unitTestForSquare() throws Exception {
+        Square square1 = new Square(5);
+        assertEquals(square1.computeArea(), 25, 0.000001);
+
+        square1.setWidth(3.1);
+        assertEquals(square1.computeArea(), 9.61, 0.000001);
+
+        assertEquals(square1.getWidth(), 3.1, 0.000001);
+    }
+
+    @Test(expected = Exception.class)
+    public void unitTestForSquareSpecialCase() throws Exception {
+        Square square1 = new Square(5);
+        square1.setWidth(-1.2);
+    }
 }
