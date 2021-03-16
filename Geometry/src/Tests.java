@@ -3,7 +3,6 @@ import static org.junit.Assert.*;
 
 public class Tests {
     @Test
-
     public void unitTestForRectangle() throws Exception {
         Rectangle rectangle1 = new Rectangle(5, 7);
         assertEquals(rectangle1.computeArea(), 35, 0.000001);
@@ -15,5 +14,29 @@ public class Tests {
     @Test(expected = Exception.class)
     public void unitTestForRectangleSpecialCase() throws Exception {
         Rectangle rectangle2 = new Rectangle(-10, 1);
+    }
+
+    @Test
+    public void setterAndGetterTestsForRectangle() throws Exception {
+        Rectangle rectangle1 = new Rectangle(5, 7);
+        rectangle1.setHeight(8);
+        assertEquals(rectangle1.computeArea(), 40, 0.000001);
+        rectangle1.setWidth(0.5);
+        assertEquals(rectangle1.computeArea(), 4, 0.000001);
+
+        assertEquals(rectangle1.getWidth(), 0.5, 0.000001);
+        assertEquals(rectangle1.getHeight(), 8, 0.000001);
+    }
+
+    @Test(expected = Exception.class)
+    public void setterAndGetterTestsForRectangleSetHeightNegative() throws Exception {
+        Rectangle rectangle1 = new Rectangle(5, 7);
+        rectangle1.setHeight(-1);
+    }
+
+    @Test(expected = Exception.class)
+    public void setterAndGetterTestsForRectangleSetWidthNegative() throws Exception {
+        Rectangle rectangle1 = new Rectangle(5, 7);
+        rectangle1.setWidth(-3);
     }
 }
