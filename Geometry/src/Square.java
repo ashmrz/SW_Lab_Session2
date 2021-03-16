@@ -1,4 +1,4 @@
-public class Square {
+public class Square implements GeometricShape {
 	private double width;
 
 	public Square(double width) throws Exception {

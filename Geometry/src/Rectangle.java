@@ -1,4 +1,4 @@
-public class Rectangle {
+public class Rectangle implements GeometricShape {
     private double width;
     private double height;
 
