@@ -9,6 +9,28 @@ public class Rectangle {
 		this.width = width;
 		this.height = height;
 	}
+	
+	public void setHeight(double height) throws Exception{
+		if (height < 0){
+			throw new Exepction("Neagtive Height");
+		}
+		this.height = height;
+	}
+	
+	public getHeight(){
+		return height;
+	}
+	
+	public void setWidth(double width) throws Exception{
+		if (width < 0){
+			throw new Exepction("Neagtive Width");
+		}
+		this.width = width;
+	}
+	
+	public getWidth(){
+		return width;
+	}
 
 	public double computeArea() {
 		return width * height;
